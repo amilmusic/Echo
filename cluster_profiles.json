@@ -1,0 +1,198 @@
+[
+  {
+    "cluster_id": 0,
+    "size": 1869,
+    "percentage_of_users": 23.36,
+    "average_scores": {
+      "echo_chamber_score": 77.48,
+      "algorithmic_influence_score": 49.97,
+      "polarization_risk_score": 79.37,
+      "content_diversity_score": 27.88,
+      "agreeing_content_engagement": 39.0,
+      "opposing_content_engagement": 3.01,
+      "rabbit_hole_tendency": 56.32,
+      "feed_alignment_reaction": 2.62,
+      "in_moment_algorithm_awareness": 2.2,
+      "algorithm_resistance_behavior": 1.58
+    },
+    "top_distinguishing_features": [
+      {
+        "feature": "rabbit_hole_tendency",
+        "cluster_average": 56.32,
+        "dataset_average": 26.23,
+        "difference": 30.09,
+        "direction": "above_average"
+      },
+      {
+        "feature": "echo_chamber_score",
+        "cluster_average": 77.48,
+        "dataset_average": 49.42,
+        "difference": 28.06,
+        "direction": "above_average"
+      },
+      {
+        "feature": "polarization_risk_score",
+        "cluster_average": 79.37,
+        "dataset_average": 54.36,
+        "difference": 25.01,
+        "direction": "above_average"
+      },
+      {
+        "feature": "algorithmic_influence_score",
+        "cluster_average": 49.97,
+        "dataset_average": 26.8,
+        "difference": 23.16,
+        "direction": "above_average"
+      }
+    ],
+    "suggested_persona_label": "Echo Chamber User",
+    "short_description": "Shows stronger signs of self-reinforcing exposure, lower engagement with opposing content, and higher echo chamber or polarization risk."
+  },
+  {
+    "cluster_id": 1,
+    "size": 2407,
+    "percentage_of_users": 30.09,
+    "average_scores": {
+      "echo_chamber_score": 22.84,
+      "algorithmic_influence_score": 8.54,
+      "polarization_risk_score": 28.91,
+      "content_diversity_score": 61.19,
+      "agreeing_content_engagement": 22.5,
+      "opposing_content_engagement": 38.4,
+      "rabbit_hole_tendency": 5.69,
+      "feed_alignment_reaction": 3.34,
+      "in_moment_algorithm_awareness": 3.22,
+      "algorithm_resistance_behavior": 2.69
+    },
+    "top_distinguishing_features": [
+      {
+        "feature": "echo_chamber_score",
+        "cluster_average": 22.84,
+        "dataset_average": 49.42,
+        "difference": -26.58,
+        "direction": "below_average"
+      },
+      {
+        "feature": "polarization_risk_score",
+        "cluster_average": 28.91,
+        "dataset_average": 54.36,
+        "difference": -25.45,
+        "direction": "below_average"
+      },
+      {
+        "feature": "rabbit_hole_tendency",
+        "cluster_average": 5.69,
+        "dataset_average": 26.23,
+        "difference": -20.54,
+        "direction": "below_average"
+      },
+      {
+        "feature": "opposing_content_engagement",
+        "cluster_average": 38.4,
+        "dataset_average": 19.45,
+        "difference": 18.95,
+        "direction": "above_average"
+      }
+    ],
+    "suggested_persona_label": "Reflective User",
+    "short_description": "Shows broader content diversity, more awareness of algorithmic influence, and more openness toward other perspectives."
+  },
+  {
+    "cluster_id": 2,
+    "size": 2358,
+    "percentage_of_users": 29.48,
+    "average_scores": {
+      "echo_chamber_score": 53.14,
+      "algorithmic_influence_score": 20.93,
+      "polarization_risk_score": 62.32,
+      "content_diversity_score": 36.01,
+      "agreeing_content_engagement": 20.41,
+      "opposing_content_engagement": 3.35,
+      "rabbit_hole_tendency": 13.22,
+      "feed_alignment_reaction": 2.72,
+      "in_moment_algorithm_awareness": 2.32,
+      "algorithm_resistance_behavior": 1.86
+    },
+    "top_distinguishing_features": [
+      {
+        "feature": "opposing_content_engagement",
+        "cluster_average": 3.35,
+        "dataset_average": 19.45,
+        "difference": -16.1,
+        "direction": "below_average"
+      },
+      {
+        "feature": "rabbit_hole_tendency",
+        "cluster_average": 13.22,
+        "dataset_average": 26.23,
+        "difference": -13.01,
+        "direction": "below_average"
+      },
+      {
+        "feature": "agreeing_content_engagement",
+        "cluster_average": 20.41,
+        "dataset_average": 28.96,
+        "difference": -8.56,
+        "direction": "below_average"
+      },
+      {
+        "feature": "polarization_risk_score",
+        "cluster_average": 62.32,
+        "dataset_average": 54.36,
+        "difference": 7.96,
+        "direction": "above_average"
+      }
+    ],
+    "suggested_persona_label": "Passive Scroller",
+    "short_description": "Often scrolls through social and societal content with moderate reflection and relatively passive engagement patterns."
+  },
+  {
+    "cluster_id": 3,
+    "size": 1366,
+    "percentage_of_users": 17.08,
+    "average_scores": {
+      "echo_chamber_score": 51.44,
+      "algorithmic_influence_score": 37.42,
+      "polarization_risk_score": 51.24,
+      "content_diversity_score": 49.2,
+      "agreeing_content_engagement": 41.4,
+      "opposing_content_engagement": 36.32,
+      "rabbit_hole_tendency": 43.72,
+      "feed_alignment_reaction": 2.86,
+      "in_moment_algorithm_awareness": 2.75,
+      "algorithm_resistance_behavior": 2.26
+    },
+    "top_distinguishing_features": [
+      {
+        "feature": "rabbit_hole_tendency",
+        "cluster_average": 43.72,
+        "dataset_average": 26.23,
+        "difference": 17.49,
+        "direction": "above_average"
+      },
+      {
+        "feature": "opposing_content_engagement",
+        "cluster_average": 36.32,
+        "dataset_average": 19.45,
+        "difference": 16.87,
+        "direction": "above_average"
+      },
+      {
+        "feature": "agreeing_content_engagement",
+        "cluster_average": 41.4,
+        "dataset_average": 28.96,
+        "difference": 12.44,
+        "direction": "above_average"
+      },
+      {
+        "feature": "algorithmic_influence_score",
+        "cluster_average": 37.42,
+        "dataset_average": 26.8,
+        "difference": 10.62,
+        "direction": "above_average"
+      }
+    ],
+    "suggested_persona_label": "Algorithm-Driven Engager",
+    "short_description": "Interacts strongly with content and similar recommendations, making the feed more likely to become personalized around repeated patterns."
+  }
+]

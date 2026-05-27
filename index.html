@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Echo</title>
+    <link rel="stylesheet" href="styles.css?v=17" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" data-route="home" aria-label="Gå till startsidan">
+        <span class="brand-mark"></span>
+        <span>Echo</span>
+      </a>
+      <nav class="nav-links" aria-label="Huvudmeny">
+        <a href="#upload" data-route="upload">Ladda upp data</a>
+        <a href="#quiz" data-route="quiz">Svara på frågor</a>
+        <a href="#results" data-route="results">Resultat</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="view active" id="home" aria-labelledby="home-title">
+        <div class="home-hero">
+          <h1 id="home-title">Hur ser din informationsbubbla ut?</h1>
+          <p class="lead">
+            Få en snabb inblick i vilka perspektiv du exponeras för.
+          </p>
+          <p class="hero-note">
+            Testet hjälper dig att upptäcka hur mönster i ditt flöde undermedvetet kan påverka dig
+          </p>
+          <div class="hero-actions centered">
+            <a class="button accent" href="#quiz" data-route="quiz">Starta test →</a>
+          </div>
+        </div>
+
+        <section class="why-section" id="why">
+          <div class="section-heading">
+            <h2>Varför använda dig av Echo</h2>
+            <span class="callout-bubble">Extra relevant inför årets val!</span>
+          </div>
+          <div class="reason-grid">
+            <article>
+              <span class="soft-icon">◎</span>
+              <strong>Förstå ditt flöde bättre</strong>
+              <p>Se den underliggande formen på innehållet algoritmen väljer åt dig.</p>
+            </article>
+            <article>
+              <span class="soft-icon">◉</span>
+              <strong>Upptäck mönster</strong>
+              <p>Lägg märke till ämnen, röster och känslor du oftast scrollar förbi.</p>
+            </article>
+            <article>
+              <span class="soft-icon">✦</span>
+              <strong>Reflektera över perspektiv</strong>
+              <p>Ta reda på vilka åsikter du exponeras och inte exponeras för.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="method-section" id="methods">
+          <div class="section-heading">
+            <h2>Välj din metod</h2>
+          </div>
+          <div class="method-grid">
+            <article class="method-card upload-method">
+              <div class="method-top">
+                <span>Rekommenderas</span>
+                <b>📎</b>
+              </div>
+              <h3>Data från social media</h3>
+              <p>Ladda upp din sociala medier-data för en mer detaljerad bild av hur ditt faktiska flöde ser ut.</p>
+              <ul>
+                <li>Tar lite längre tid</li>
+                <li>Ger en mer detaljerad analys</li>
+              </ul>
+              <a class="button secondary" href="#upload" data-route="upload">Ladda upp data</a>
+            </article>
+            <article class="method-card recommended">
+              <div class="method-top">
+                <span>Testa först</span>
+                <b>5-7 min</b>
+              </div>
+              <h3>Snabbtest</h3>
+              <p>Testa snabbt genom att svara på frågor och få en första bild av hur ditt sociala medieflöde kan påverka dig.</p>
+              <ul>
+                <li>Tar ungefär 5-7 min</li>
+                <li>Ger en första uppskattning av din informationsbubbla</li>
+              </ul>
+              <a class="button primary" href="#quiz" data-route="quiz">Starta test →</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="privacy-section" id="privacy">
+          <div class="privacy-copy">
+            <h2>Vi bryr oss om din integritet</h2>
+            <p>
+              Inga konton, ingen spårning och inga överraskningar. Echo sparar inget av
+              det du delar. Din data används bara för att ta fram rapporten och raderas när
+              resultatet är klart.
+            </p>
+          </div>
+          <div class="privacy-points">
+            <article><span>◇</span><strong>Används bara för ditt resultat</strong><p>Din data bearbetas för att ge dig en inblick och raderas sedan.</p></article>
+            <article><span>▢</span><strong>Din data skyddas enligt GDPR</strong><p>Din data behandlas enligt GDPR och används endast för att skapa din rapport. Ingen personlig information sparas efter analysen.</p></article>
+            <article><span>◌</span><strong>Hanteras anonymt</strong><p>All analys sker utan att identifiera vem du är.</p></article>
+          </div>
+        </section>
+
+        <section class="home-cta">
+          <h2>Redo att se din bubbla?</h2>
+          <p>Välj den väg som passar dig. Båda leder till samma typ av klarhet.</p>
+          <div class="hero-actions centered">
+            <a class="button accent" href="#quiz" data-route="quiz">Starta test →</a>
+            <a class="button secondary" href="#upload" data-route="upload">Ladda upp data</a>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="upload" aria-labelledby="upload-title">
+        <div class="page-head">
+          <h1 id="upload-title">Ladda upp din sociala mediedata</h1>
+          <p class="lead">
+            Använd en ZIP- eller JSON-fil från Instagram, Facebook, TikTok eller YouTube.
+          </p>
+        </div>
+
+        <section class="guide">
+          <h2>Så hämtar du din data</h2>
+          <div class="accordion">
+            <button class="accordion-trigger" data-accordion="instagram">Instagram</button>
+            <div class="accordion-panel open" id="instagram">
+              <ol>
+                <li>Öppna Instagram och gå till Inställningar.</li>
+                <li>Välj Kontocenter och sedan Din information och dina behörigheter.</li>
+                <li>Tryck på Ladda ned din information och välj JSON-format.</li>
+                <li>Ladda ned ZIP-filen och ladda upp den här.</li>
+              </ol>
+            </div>
+            <button class="accordion-trigger" data-accordion="facebook">Facebook</button>
+            <div class="accordion-panel" id="facebook">
+              <ol>
+                <li>Gå till Inställningar och sekretess.</li>
+                <li>Välj Din Facebook-information och Ladda ned din information.</li>
+                <li>Välj inlägg, reaktioner, följda sidor och JSON-format.</li>
+              </ol>
+            </div>
+            <button class="accordion-trigger" data-accordion="tiktok">TikTok</button>
+            <div class="accordion-panel" id="tiktok">
+              <ol>
+                <li>Öppna Inställningar och sekretess i TikTok.</li>
+                <li>Gå till Konto och Ladda ned dina data.</li>
+                <li>Välj JSON och ladda upp filen när exporten är klar.</li>
+              </ol>
+            </div>
+            <button class="accordion-trigger" data-accordion="youtube">YouTube</button>
+            <div class="accordion-panel" id="youtube">
+              <ol>
+                <li>Gå till Google Takeout när du är inloggad.</li>
+                <li>Välj YouTube och YouTube Music.</li>
+                <li>Exportera historik och prenumerationer, ladda sedan upp arkivet.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <div class="upload-box" id="dropZone">
+          <div class="upload-icon"></div>
+          <h2>Ladda upp din datafil</h2>
+          <p>Släpp filen här eller välj den från datorn.</p>
+          <label class="button dark" for="fileInput">Välj fil</label>
+          <input id="fileInput" type="file" accept=".zip,.json,.csv,.txt" />
+          <p class="file-status" id="fileStatus">Ingen fil vald ännu.</p>
+        </div>
+
+        <section class="quiz-complement upload-next-step">
+          <div>
+            <h2>Nästa steg:</h2>
+            <p>
+              För att jämföra din uppladdade data med din egen upplevelse får du nu svara på några korta frågor.
+            </p>
+          </div>
+          <a class="button accent" href="#quiz" data-route="quiz">Fortsätt till frågorna →</a>
+        </section>
+      </section>
+
+      <section class="view" id="quiz" aria-labelledby="quiz-title">
+        <div class="quiz-shell">
+          <form class="question-card" id="quizForm">
+            <p class="section-label" id="questionSection">Fråga 1 av 15</p>
+            <div class="progress-track form-progress"><span id="progressBar"></span></div>
+            <h2 id="questionText"></h2>
+            <p class="helper" id="questionHelper"></p>
+            <div class="answer-list" id="answerList"></div>
+            <div class="quiz-actions">
+              <button class="button secondary" type="button" id="prevQuestion">Tillbaka</button>
+              <button class="button primary" type="button" id="nextQuestion">Nästa</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="view" id="results" aria-labelledby="results-title">
+        <div class="report-head">
+          <div>
+            <p class="eyebrow">Din filterbubblerapport</p>
+            <h1 id="results-title">Analys av ditt informationsflöde</h1>
+          </div>
+          <button class="button secondary" id="downloadButton">Ladda ned rapport</button>
+        </div>
+
+        <div class="report-grid top-report">
+          <section class="score-card">
+            <p class="panel-label">Bubbelindex</p>
+            <div class="gauge" style="--score: 72; --needle: 39.6deg">
+              <span id="scoreValue">72%</span>
+            </div>
+            <strong class="status-pill" id="personaLabel">Hög påverkan</strong>
+            <p id="personaExplanation">Ditt flöde lutar märkbart mot innehåll som bekräftar befintliga åsikter.</p>
+            <p class="adaptive-summary" id="bubbleSummary">Resultatet bygger på hur dina svar pekar mot upprepning, innehållsbredd och rekommendationsmönster.</p>
+          </section>
+
+          <section class="wide-card">
+            <div class="card-title-row">
+              <div>
+                <h2>Vad detta betyder för dig</h2>
+                <p id="meaningIntro">En beteendebaserad sammanställning av centrala mönster i dina svar.</p>
+              </div>
+            </div>
+            <div class="metric-list">
+              <div class="metric">
+                <span>Ensidighetsrisk</span><strong id="polarizationMetric">75%</strong>
+                <div><span></span></div>
+              </div>
+              <div class="metric green">
+                <span>Innehållsbredd</span><strong id="diversityMetric">20%</strong>
+                <div><span></span></div>
+              </div>
+              <div class="metric green">
+                <span>Kontakt med andra perspektiv</span><strong id="opposingMetric">16%</strong>
+                <div><span></span></div>
+              </div>
+            </div>
+            <div class="adaptive-insights" id="meaningInsights"></div>
+          </section>
+        </div>
+
+        <div class="report-grid behavior-report-grid">
+          <section class="wide-card behavior-card">
+            <h2>Beteendeprofil</h2>
+            <p>En neutral bild av hur dina svar fördelar sig mellan bredd, upprepning, engagemang och medvetenhet.</p>
+            <div class="behavior-bars" id="behaviorBars">
+              <div><span>Innehållsbredd</span><b><i style="width: 50%"></i></b></div>
+              <div><span>Andra perspektiv</span><b><i style="width: 50%"></i></b></div>
+              <div><span>Upprepningsintensitet</span><b><i style="width: 50%"></i></b></div>
+              <div><span>Engagemangsdjup</span><b><i style="width: 50%"></i></b></div>
+              <div><span>Algoritmmedvetenhet</span><b><i style="width: 50%"></i></b></div>
+              <div><span>Aktiv styrning</span><b><i style="width: 50%"></i></b></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="consequence-card profile-interpretation">
+          <h2>Din tolkningsprofil</h2>
+          <p id="profileDescription">Profilen bygger på vilket klustermönster dina quizsvar ligger närmast.</p>
+          <div class="profile-grid">
+            <article>
+              <strong>Styrkor</strong>
+              <ul id="profileStrengths"></ul>
+            </article>
+            <article>
+              <strong>Möjliga blinda fläckar</strong>
+              <ul id="profileBlindSpots"></ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="consequence-card">
+          <h2>Möjliga konsekvenser</h2>
+          <p id="consequenceIntro">Mönstren nedan visas utifrån dina poäng och ska läsas som reflektioner, inte diagnoser.</p>
+          <div class="consequence-grid" id="consequenceGrid">
+            <article><strong>Reflektion</strong><p>Dina svar används för att visa möjliga effekter av upprepning, bredd och engagemang.</p></article>
+          </div>
+        </section>
+
+        <section class="recommendations">
+          <h2>Personliga rekommendationer</h2>
+          <div class="recommendation-grid">
+            <article><span>01</span><em>Bredda ditt flöde</em><strong>Följ fem källor utanför din vanliga krets</strong><p>Små förändringar i vilka du följer kan bredda algoritmens signaler.</p></article>
+            <article><span>02</span><em>Tänk innan du reagerar</em><strong>Pausa innan du reagerar</strong><p>Vänta några sekunder vid innehåll som direkt väcker irritation.</p></article>
+            <article><span>03</span><em>Var uppmärksam på algoritmer</em><strong>Kontrollera källan före delning</strong><p>Snabb faktakoll gör att du stärker andras flöden också.</p></article>
+            <article><span>04</span><em>Sök fler perspektiv</em><strong>Justera dina algoritmiska preferenser</strong><p>Nollställ intressen eller dölj ämnen som gör flödet onödigt snävt.</p></article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="modal-overlay hidden" id="uploadPromptModal">
+      <div class="modal-card">
+        <h2>Vill du få en bredare analys?</h2>
+        <p>
+          Spara dina svar och ladda upp din data också. Då kan Echo jämföra din egen
+          uppfattning med mönster i ditt faktiska flöde.
+        </p>
+        <div class="modal-actions">
+          <button class="button accent" type="button" id="modalUploadButton">Ladda upp data</button>
+          <button class="button secondary" type="button" id="modalResultButton">Fortsätt till resultat</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="quiz_scoring.js?v=17"></script>
+    <script src="app.js?v=17"></script>
+  </body>
+</html>

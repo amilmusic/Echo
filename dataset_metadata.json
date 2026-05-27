@@ -1,0 +1,545 @@
+{
+  "dataset_name": "synthetic_social_media_information_bubbles_users",
+  "source_files": [
+    "synthetic_users.csv",
+    "synthetic_users.json"
+  ],
+  "number_of_rows": 8000,
+  "number_of_columns": 47,
+  "encoding_explanation": {
+    "platform_ranking_columns": "Platform columns use ranked numeric encoding: 3 = user's highest-ranked exposure platform, 2 = second-ranked platform, 1 = third-ranked platform, 0 = not selected.",
+    "topic_columns": "Topic columns use binary encoding: 1 = topic appears often in the user's feed, 0 = topic was not selected.",
+    "single_choice_columns": "Single-choice quiz answers are encoded as ordinal numeric values, usually from 1 to 4 or 1 to 5. Higher values generally represent stronger algorithm awareness, broader reflection, more exposure, or more active resistance depending on the question.",
+    "multi_select_behavior_columns": "Multi-select behavior columns use binary encoding: 1 = behavior selected, 0 = behavior not selected.",
+    "aggregate_behavior_columns": "Aggregate behavior columns are numeric scores calculated from related binary behavior columns and scaled to 0-100.",
+    "derived_score_columns": "Final derived score columns are numeric 0-100 scores calculated from quiz-linked features. They are intended for visualization, clustering experiments, and frontend demos, not as psychological or political labels."
+  },
+  "score_interpretation": {
+    "echo_chamber_score": "BubbleIndex. Increases with repeated similar-video behavior, active engagement with agreeing content, low opposing-viewpoint engagement, low diversity, and low reflection/resistance. Decreases with broader content diversity, opposing-viewpoint contact, algorithm awareness, and active perspective-seeking behavior.",
+    "algorithmic_influence_score": "Estimated strength of personalization signals. Increases with rabbit-hole behavior and active engagement. Decreases slightly with algorithm awareness and active resistance behavior.",
+    "polarization_risk_score": "Estimated one-sidedness risk. Increases with BubbleIndex, low content diversity, low opposing-viewpoint engagement, missed-news patterns, and perceived feed separation. Decreases with diversity, opposing-viewpoint contact, awareness, and resistance.",
+    "content_diversity_score": "Estimated breadth of information exposure. Increases with varied platforms/topics/news exposure, engagement with other viewpoints, reflection, and active feed control. Decreases slightly when repeated recommendation loops dominate."
+  },
+  "column_names": [
+    "user_id",
+    "platform_tiktok",
+    "platform_instagram",
+    "platform_youtube",
+    "platform_x_twitter",
+    "platform_facebook",
+    "platform_reddit",
+    "platform_diversity_score",
+    "content_format_preference",
+    "topic_climate",
+    "topic_migration",
+    "topic_economy",
+    "topic_crime",
+    "topic_equality",
+    "topic_conflict",
+    "topic_education",
+    "topic_healthcare",
+    "topic_diversity_score",
+    "repetition_interpretation",
+    "news_media_exposure",
+    "missed_news_frequency",
+    "perceived_feed_difference",
+    "agree_like_comment",
+    "agree_read_watch_full",
+    "agree_save_share",
+    "agree_scroll_past",
+    "agreeing_content_engagement",
+    "oppose_scroll_past",
+    "oppose_read_watch_full",
+    "oppose_open_comments",
+    "oppose_comment",
+    "oppose_rarely_encounter",
+    "opposing_content_engagement",
+    "video_gets_similar",
+    "video_continue_watching",
+    "video_search_more",
+    "video_scroll_past",
+    "rabbit_hole_tendency",
+    "feed_alignment_reaction",
+    "in_moment_algorithm_awareness",
+    "algorithm_mechanism_understanding",
+    "echo_chamber_reflection",
+    "algorithm_resistance_behavior",
+    "echo_chamber_score",
+    "algorithmic_influence_score",
+    "polarization_risk_score",
+    "content_diversity_score"
+  ],
+  "ml_feature_columns": [
+    "platform_tiktok",
+    "platform_instagram",
+    "platform_youtube",
+    "platform_x_twitter",
+    "platform_facebook",
+    "platform_reddit",
+    "platform_diversity_score",
+    "content_format_preference",
+    "topic_climate",
+    "topic_migration",
+    "topic_economy",
+    "topic_crime",
+    "topic_equality",
+    "topic_conflict",
+    "topic_education",
+    "topic_healthcare",
+    "topic_diversity_score",
+    "repetition_interpretation",
+    "news_media_exposure",
+    "missed_news_frequency",
+    "perceived_feed_difference",
+    "agree_like_comment",
+    "agree_read_watch_full",
+    "agree_save_share",
+    "agree_scroll_past",
+    "agreeing_content_engagement",
+    "oppose_scroll_past",
+    "oppose_read_watch_full",
+    "oppose_open_comments",
+    "oppose_comment",
+    "oppose_rarely_encounter",
+    "opposing_content_engagement",
+    "video_gets_similar",
+    "video_continue_watching",
+    "video_search_more",
+    "video_scroll_past",
+    "rabbit_hole_tendency",
+    "feed_alignment_reaction",
+    "in_moment_algorithm_awareness",
+    "algorithm_mechanism_understanding",
+    "echo_chamber_reflection",
+    "algorithm_resistance_behavior",
+    "echo_chamber_score",
+    "algorithmic_influence_score",
+    "polarization_risk_score",
+    "content_diversity_score"
+  ],
+  "columns": {
+    "user_id": {
+      "type": "integer",
+      "represents": "Unique synthetic user identifier.",
+      "encoding": "Sequential integer ID.",
+      "use_for_ml_training": false,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": true
+    },
+    "platform_tiktok": {
+      "type": "integer",
+      "represents": "Ranked exposure to political or societal content on TikTok.",
+      "encoding": "3 = ranked first, 2 = ranked second, 1 = ranked third, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "platform_instagram": {
+      "type": "integer",
+      "represents": "Ranked exposure to political or societal content on Instagram.",
+      "encoding": "3 = ranked first, 2 = ranked second, 1 = ranked third, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "platform_youtube": {
+      "type": "integer",
+      "represents": "Ranked exposure to political or societal content on YouTube.",
+      "encoding": "3 = ranked first, 2 = ranked second, 1 = ranked third, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "platform_x_twitter": {
+      "type": "integer",
+      "represents": "Ranked exposure to political or societal content on X / Twitter.",
+      "encoding": "3 = ranked first, 2 = ranked second, 1 = ranked third, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "platform_facebook": {
+      "type": "integer",
+      "represents": "Ranked exposure to political or societal content on Facebook.",
+      "encoding": "3 = ranked first, 2 = ranked second, 1 = ranked third, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "platform_reddit": {
+      "type": "integer",
+      "represents": "Ranked exposure to political or societal content on Reddit.",
+      "encoding": "3 = ranked first, 2 = ranked second, 1 = ranked third, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "platform_diversity_score": {
+      "type": "float",
+      "represents": "How different the user's selected platforms are from each other.",
+      "encoding": "Derived 0-100 style score based on platform mix similarity; higher values mean a more varied platform environment.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    },
+    "content_format_preference": {
+      "type": "integer",
+      "represents": "Preferred format for societal or political content.",
+      "encoding": "1 = rarely stops, 2 = comments/discussions, 3 = short videos/reels, 4 = text posts/articles, 5 = longer reports/documentaries.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_climate": {
+      "type": "integer",
+      "represents": "Climate and environment content recurring in the user's feed.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_migration": {
+      "type": "integer",
+      "represents": "Migration and integration content recurring in the user's feed.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_economy": {
+      "type": "integer",
+      "represents": "Economy and tax content recurring in the user's feed.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_crime": {
+      "type": "integer",
+      "represents": "Crime and safety content recurring in the user's feed.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_equality": {
+      "type": "integer",
+      "represents": "Equality and rights content recurring in the user's feed.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_conflict": {
+      "type": "integer",
+      "represents": "War and international conflict content recurring in the user's feed.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_education": {
+      "type": "integer",
+      "represents": "School and education content recurring in the user's feed.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_healthcare": {
+      "type": "integer",
+      "represents": "Healthcare content recurring in the user's feed.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "topic_diversity_score": {
+      "type": "float",
+      "represents": "Breadth of recurring political or societal topics selected by the user.",
+      "encoding": "33.3 = one topic selected, 66.7 = two topics selected, 100 = three topics selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    },
+    "repetition_interpretation": {
+      "type": "integer",
+      "represents": "How the user interprets repeated posts with a similar angle.",
+      "encoding": "1 = coincidence, 2 = important issue, 4 = algorithm detected, 5 = seeks other perspectives.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "news_media_exposure": {
+      "type": "integer",
+      "represents": "Frequency of established news media appearing in the user's social media feed.",
+      "encoding": "1 = never/mostly private people or influencers, 2 = rarely, 3 = weekly, 4 = daily.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "missed_news_frequency": {
+      "type": "integer",
+      "represents": "How often the user misses news that others around them have seen.",
+      "encoding": "1 = rarely, 2 = not sure, 3 = sometimes, 4 = often.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "perceived_feed_difference": {
+      "type": "integer",
+      "represents": "How different the user believes their feed is from a friend with different political opinions.",
+      "encoding": "1 = similar, 2 = not sure, 3 = somewhat different, 4 = very different.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "agree_like_comment": {
+      "type": "integer",
+      "represents": "User likes or comments on agreeing societal content.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "agree_read_watch_full": {
+      "type": "integer",
+      "represents": "User reads or watches agreeing societal content fully.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "agree_save_share": {
+      "type": "integer",
+      "represents": "User saves or shares agreeing societal content.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "agree_scroll_past": {
+      "type": "integer",
+      "represents": "User scrolls past agreeing societal content.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "agreeing_content_engagement": {
+      "type": "integer",
+      "represents": "Aggregated engagement intensity toward content the user agrees with.",
+      "encoding": "0-100 derived behavior score calculated from agreeing-content multi-select answers.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    },
+    "oppose_scroll_past": {
+      "type": "integer",
+      "represents": "User scrolls past content they disagree with.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "oppose_read_watch_full": {
+      "type": "integer",
+      "represents": "User reads or watches disagreeing content fully.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "oppose_open_comments": {
+      "type": "integer",
+      "represents": "User opens comments on content they disagree with.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "oppose_comment": {
+      "type": "integer",
+      "represents": "User comments on content they disagree with.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "oppose_rarely_encounter": {
+      "type": "integer",
+      "represents": "User reports rarely encountering disagreeing content.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "opposing_content_engagement": {
+      "type": "integer",
+      "represents": "Aggregated openness or engagement with content the user disagrees with.",
+      "encoding": "0-100 derived behavior score calculated from disagreeing-content multi-select answers.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    },
+    "video_gets_similar": {
+      "type": "integer",
+      "represents": "User reports receiving similar videos after watching an interesting topic.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "video_continue_watching": {
+      "type": "integer",
+      "represents": "User continues watching similar videos after an interesting topic.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "video_search_more": {
+      "type": "integer",
+      "represents": "User searches for more information or reads comments after an interesting topic.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "video_scroll_past": {
+      "type": "integer",
+      "represents": "User scrolls past after seeing a video about an interesting topic.",
+      "encoding": "1 = selected, 0 = not selected.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "rabbit_hole_tendency": {
+      "type": "integer",
+      "represents": "Tendency to continue into similar recommended videos or topic loops.",
+      "encoding": "0-100 derived behavior score calculated from similar-video multi-select answers.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    },
+    "feed_alignment_reaction": {
+      "type": "integer",
+      "represents": "Reaction to noticing that feed content often matches the user's opinions.",
+      "encoding": "1 = has not thought about it, 2 = sees it as normal, 3 = feels more personal, 5 = wants more perspectives.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "in_moment_algorithm_awareness": {
+      "type": "integer",
+      "represents": "How often the user thinks about algorithmic influence while scrolling.",
+      "encoding": "1 = never, 2 = rarely, 3 = sometimes, 4 = often.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "algorithm_mechanism_understanding": {
+      "type": "integer",
+      "represents": "What the user believes most affects their feed.",
+      "encoding": "1 = no clear reason, 2 = friends' behavior, 4 = watch time, 5 = active engagement such as likes/comments/saves/shares.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "echo_chamber_reflection": {
+      "type": "integer",
+      "represents": "Reflection when the feed often matches the user's own opinions.",
+      "encoding": "1 = does not reflect much, 2 = natural/comfortable, 4 = curious about what is missing, 5 = actively seeks other perspectives.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "algorithm_resistance_behavior": {
+      "type": "integer",
+      "represents": "Whether the user has actively tried to influence or broaden the algorithmic feed.",
+      "encoding": "1 = never, 2 = thought about it, 3 = tried once, 4 = does it sometimes.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": false,
+      "derived_score": false,
+      "exclude_from_ml": false
+    },
+    "echo_chamber_score": {
+      "type": "float",
+      "represents": "Estimated risk of narrow or self-reinforcing information exposure.",
+      "encoding": "0-100 derived score; higher values indicate stronger echo chamber tendency.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    },
+    "algorithmic_influence_score": {
+      "type": "float",
+      "represents": "Estimated degree to which behavior may reinforce algorithmic personalization.",
+      "encoding": "0-100 derived score; higher values indicate stronger algorithmic influence or reinforcement tendency.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    },
+    "polarization_risk_score": {
+      "type": "float",
+      "represents": "Estimated tendency toward polarized or separated information exposure.",
+      "encoding": "0-100 derived score; higher values indicate higher polarization risk.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    },
+    "content_diversity_score": {
+      "type": "float",
+      "represents": "Estimated breadth and diversity of content exposure.",
+      "encoding": "0-100 derived score; higher values indicate broader content diversity.",
+      "use_for_ml_training": true,
+      "mainly_for_visualization": true,
+      "derived_score": true,
+      "exclude_from_ml": false
+    }
+  }
+}
