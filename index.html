@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Echo</title>
-    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=19" />
   </head>
   <body>
     <header class="topbar">
@@ -16,6 +16,7 @@
         <a href="#upload" data-route="upload">Ladda upp data</a>
         <a href="#quiz" data-route="quiz">Svara på frågor</a>
         <a href="#results" data-route="results">Resultat</a>
+        <a href="#about" data-route="about">Om oss</a>
       </nav>
     </header>
 
@@ -294,6 +295,51 @@
           </div>
         </section>
       </section>
+      <section class="view about-view" id="about" aria-labelledby="about-title">
+        <div class="about-hero">
+          <p class="eyebrow">Om projektet</p>
+          <h1 id="about-title">Vi vill göra flödet lättare att förstå</h1>
+          <p class="lead">
+            Echo är en reflektionsbaserad prototyp som hjälper unga vuxna att undersöka hur
+            exponering, upprepning och rekommendationsmönster kan påverka innehållet i sociala medier.
+          </p>
+        </div>
+
+        <section class="about-section">
+          <div>
+            <p class="section-label">Varför Echo?</p>
+            <h2>Ett verktyg för reflektion, inte en politisk kompass</h2>
+          </div>
+          <p>
+            Echo försöker inte avgöra vad användaren tycker politiskt. Resultatet fokuserar på
+            beteenden och exponering: innehållsbredd, kontakt med andra perspektiv, upprepning
+            och hur användaren reagerar på rekommendationer.
+          </p>
+        </section>
+
+        <section class="about-section">
+          <div>
+            <p class="section-label">Bra att veta</p>
+            <h2>Resultaten är indikatorer</h2>
+          </div>
+          <p>
+            Procentsiffrorna ska inte tolkas som exakta mätningar eller diagnoser. De är
+            transparenta indikatorer baserade på quizsvaren. Prototypen använder ingen scraping,
+            analyserar inte användarens flöde live och försöker inte identifiera personen bakom svaren.
+          </p>
+        </section>
+
+        <section class="about-team" aria-labelledby="team-title">
+          <p class="section-label">Projektgruppen</p>
+          <h2 id="team-title">Team Echo</h2>
+          <div class="team-grid">
+            <article><span>AM</span><strong>Amil Music</strong></article>
+            <article><span>EL</span><strong>Ebba Lindberg</strong></article>
+            <article><span>AK</span><strong>Alexandra Kreuger</strong></article>
+            <article><span>AK</span><strong>Alice Kjellander</strong></article>
+          </div>
+        </section>
+      </section>
     </main>
 
     <div class="modal-overlay hidden" id="uploadPromptModal">
@@ -310,7 +356,7 @@
       </div>
     </div>
 
-    <script src="quiz_scoring.js?v=17"></script>
-    <script src="app.js?v=17"></script>
+    <script src="quiz_scoring.js?v=18"></script>
+    <script src="app.js?v=18"></script>
   </body>
 </html>

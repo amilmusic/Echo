@@ -1,4 +1,4 @@
-const routes = ["home", "upload", "quiz", "results"];
+const routes = ["home", "upload", "quiz", "results", "about"];
 
 const questions = [
   {
